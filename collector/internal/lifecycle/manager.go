@@ -90,7 +90,7 @@ func NewManager(ctx context.Context, logger *zap.Logger, version string) (contex
 		}
 	}()
 
-	factories, _ := lambdacomponents.Components(res.ExtensionID)
+	factories, _ := lambdacomponents.Components()
 	lm.collector = collector.NewCollector(logger, factories, version)
 
 	return ctx, lm
